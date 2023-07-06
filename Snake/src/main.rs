@@ -1,3 +1,7 @@
+mod plate;
+
 fn main() {
-    println!("Hello, world!");
+    let mut plt: Vec<Vec<i32>>;
+    plt = plate::read_map();
+    println!("{:?}", plt);
 }
