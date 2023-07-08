@@ -1,5 +1,10 @@
 use std::fs;
 use std::process::Command;
+use crate::utility::utility;
+use utility::Player;
+use utility::Movement;
+use rand::Rng;
+
 
 pub fn clear_terminal() {
     if cfg!(target_os = "windows") {
@@ -40,6 +45,13 @@ pub fn read_map() -> Vec<Vec<i32>> {
     }
     plt
 }
-pub fn print_screen(map: Vec<Vec<i32>>) {
+
+pub fn spawn(map: Vec<Vec<i32>>,ply:Player){
+    let mut rng = rand::thread_rng();
+    let random_row: i32 = rng.gen_range(1..=map.len() as i32);
+    let random_col: i32 = rng.gen_range(1..=map[0].len() as i32);
+}
+
+pub fn print_screen(map: Vec<Vec<i32>>,ply:Player) {
     clear_terminal();
 }
